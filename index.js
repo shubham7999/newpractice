@@ -24,3 +24,6 @@ lists[1].style.fontWeight = 'bold';
 lists[2].style.fontWeight = 'bold';
 
 lists[2].style.backgroundColor = 'green';
+
+var item = document.getElementsByTagName('li');
+console.log(item[3]);
