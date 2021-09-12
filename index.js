@@ -1,54 +1,81 @@
-console.log("Started");
+console.log("Working Fine");
 
-console.log(document);
-console.log(document.domain);
-console.log(document.URL);
-console.log(document.title);
+// Prentnode
+let node = document.querySelector('ul');
+console.log(node.parentNode);
 
-console.log(document.all);
+//Parentelelelmnt
+
+let node1 = document.querySelector('.listitem');
+console.log(node1.parentElement);
+
+// Childnodes
+
+let div = document.querySelector('div');
+console.log(div.children);
+console.log(div);
+
+//first child lastchild 
+
+let ul = document.querySelector('ul');
+console.log(ul.children);
+console.log(ul.firstChild);
+console.log(ul.lastChild);
+
+//firstelelement child
+console.log(ul.firstElementChild);
+
+//;lastelelementchild
+console.log(ul.lastElementChild);
+
+//nextsibling
+
+console.log(ul.nextSibling);
+
+//Next elelement siblingd
+console.log(ul.nextElementSibling);
+
+//previous sibling
+
+console.log(ul.previousSibling);
+
+//previous element sibling
+
+console.log(ul.previousElementSibling);
+
+//Creating new div
 
 
-// Get elelemnt by id
-console.log(document.getElementById('start'));
+console.log("===============");
+let new1 = document.createElement('div');
 
-let header = document.getElementById('start');
+new1.className="hello";
+new1.id = "unique";
 
-header.style.border = 'solid 3px black';
-
-// Get element by class name
-// let lists = document.getElementsByClassName('listitem');
-// console.log(lists[0])
-
-// lists[0].style.fontWeight = 'bold';
-// lists[1].style.fontWeight = 'bold';
-// lists[2].style.fontWeight = 'bold';
-
-// lists[2].style.backgroundColor = 'green';
-
-// var item = document.getElementsByTagName('li');
-// console.log(item[3]);
-
-// Query seleector and queryselectorall
-
-// console.log("started")
-
-// var item = document.querySelector('.listitem');
-// console.log(item);
-
-// var second = document.querySelector('.listitem:nth-child(3)');
-// second.style.backgroundColor = 'green';
+// Setaatribute
+new1.setAttribute('title' , "hey");
 
 
-// Queyselelectorall
+// Craeting text node
+let text = document.createTextNode("Child");
 
-var odd = document.querySelectorAll('li:nth-child(odd)');
-console.log(odd);
-for(let i =0;i<odd.length;i++)
-{
-    odd[i].style.backgroundColor='green';
-    console.log("sh");
-}
 
-var allitem = document.querySelectorAll('li');
+// Ap[pending child]
+new1.appendChild(text);
 
-allitem[1].style.color = 'green';
+console.log(new1);
+
+var container = document.querySelector('ul');
+var set = document.querySelector('li');
+let hello = document.createTextNode("HEllo");
+
+
+//Insert Before
+container.insertBefore(hello , set);
+console.log(container);
+
+
+
+
+
+
