@@ -17,6 +17,10 @@ button.addEventListener('click' , ()=>{
     
 });
 
+
+//console.log(deleteb);
+
+
 var items = {...localStorage};
 
 let html = ``;
@@ -24,9 +28,9 @@ let html = ``;
 for(let key in items)
 {
     let obj = JSON.parse(items[key]);
-    html += `<li> User name is  ${obj.name} , User email is ${obj.email} ,  User phone is ${obj.phone} </li>`
-    html += `<button id = ${key}>Edit</button>`
-    html += `<button id = ${key}>Delete</button>`
+    html += `<li class = ${key} >  User name is  ${obj.name} , User email is ${obj.email} ,  User phone is ${obj.phone} </li>`
+    html += `<button class = ${key}>Edit</button>`
+    html += `<button class = ${key}>Delete</button>`
 
 
 }
@@ -34,5 +38,25 @@ for(let key in items)
 var root = document.getElementById('root');
 console.log(root);
 root.innerHTML = html;
+
+var deleteb = document.querySelectorAll('button');
+
+for(let i=1;i<deleteb.length;i++)
+{
+   // console.log(deleteb[i]);
+    deleteb[i].addEventListener('click' ,(e)=>{
+
+        let idd = e.target.className;
+        console.log(idd);
+        var list = document.querySelectorAll('.' + idd);
+        for(let i=0;i<list.length;i++)
+        {
+           // list[0].remove();
+            localStorage.removeItem(idd);
+        }
+
+    })
+}
+
 
 
