@@ -25,6 +25,9 @@ for(let key in items)
 {
     let obj = JSON.parse(items[key]);
     html += `<li> User name is  ${obj.name} , User email is ${obj.email} ,  User phone is ${obj.phone} </li>`
+    html += `<button id = ${key}>Edit</button>`
+    html += `<button id = ${key}>Delete</button>`
+
 
 }
 
