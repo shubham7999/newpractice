@@ -1,21 +1,25 @@
 console.log("Working");
+var item = document.querySelector('#search');
 
-var buttons = document.querySelectorAll('button');
+item.addEventListener("input", (e) => {
 
-function clicked(event)
-{
-    let classh = this.className;
-  
-    document.querySelectorAll("." + classh).forEach(el => el.remove());
+    console.log(this.value);
 
+    let itemvalue = this.value;
 
-}
-for(let i=0;i<buttons.length;i++)
-{
-    buttons[i].addEventListener('click' , clicked);
-}
+    var list = document.querySelectorAll('li');
 
 
+    for (let i = 0; i < list.length; i++) {
+
+        let s = list[i].innerText;
+
+        if (s.indexOf(itemvalue) === -1) {
+            list[i].style.display = 'none'
+        } else {
+            list[i].style.display = 'block'
+        }
+    }
 
 
-
+});
