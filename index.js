@@ -1,25 +1,14 @@
-console.log("Working");
-var item = document.querySelector('#search');
+const button = document.querySelector('button');
 
-item.addEventListener("input", (e) => {
+button.addEventListener('click' , ()=>{
 
-    console.log(this.value);
+    let name = document.getElementById('name').value;
+    let phone = document.getElementById('phone').value;
+    let email = document.getElementById('email').value;
 
-    let itemvalue = this.value;
+    localStorage.setItem("name", name);
+    localStorage.setItem("phone", phone);
+    localStorage.setItem("email", email);
 
-    var list = document.querySelectorAll('li');
-
-
-    for (let i = 0; i < list.length; i++) {
-
-        let s = list[i].innerText;
-
-        if (s.indexOf(itemvalue) === -1) {
-            list[i].style.display = 'none'
-        } else {
-            list[i].style.display = 'block'
-        }
-    }
-
-
+    
 });
